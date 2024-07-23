@@ -1,0 +1,255 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    background-color: #000000;
+    padding: 10px;
+    justify-content: space-around;
+    /*margin-left: 20px;
+    margin-right: 20px;*/
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius:40px;
+    border-bottom-left-radius: 40px;
+}
+
+nav a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: #FD853A;
+    border-radius: 30px;
+}
+
+nav .logo {
+    height: 60px;
+    background-color: #333; /* Same color as the navbar background */
+    border-radius: 25px; /* Optional: to make the logo blend more smoothly */
+    font-family: sans-serif;
+}
+
+.container, .center-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the content horizontally */
+    padding: 40px;
+    border: 1px solid #ccc;
+    max-width: 1200px;
+    margin: 50px auto;
+    background-color: white;
+    border-radius: 10px;
+    flex-direction: column; /* Stack items vertically */
+    text-align: center; /* Center the text */
+}
+
+.text {
+    max-width: 50%;
+}
+
+.text h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.text p {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.learn-more {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FD853A;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.image01 img {
+    max-width: 500px;
+    height: auto;
+    border-radius: 40px;
+}
+
+.image02 img {
+    max-width: 100%;
+}
+
+.validate-banner {
+    background-color: #FD853A;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.how-to-validate {
+    text-align: center;
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.how-to-validate h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.step {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.step h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.upload-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.upload-box {
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+    position: relative;
+    width: 300px;
+    height: 200px;
+}
+
+.upload-placeholder {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.upload-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #FD853A;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.submit-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #FD853A;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-btn:hover, .upload-btn:hover {
+    background-color: #333;
+}
+
+.upload {
+    text-align: center;
+    font-size: 36px;
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .container, .center-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .text, .image01 {
+        max-width: 100%;
+    }
+}
+.container01 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    border: 1px solid #ccc;
+    max-width: 1200px;
+    margin: 50px auto;
+    background-color: white;
+    border-radius: 10px;
+}
+.prediction-result {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.prediction-result h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.prediction-result p {
+    font-size: 18px;
+}
+.footer {
+    max-width: 100%;
+}

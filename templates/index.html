@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home - Image Forgery Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav>
+        <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Logo" class="logo">  
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+    </nav>
+    <div class="container01">
+        <div class="text">
+            <h1>Endorze: Ensuring Every Image Tells the True Story</h1>
+            <p>Endorze provides advanced solutions for detecting tampered images,
+                offering features such as image authenticity verification, tampering detection, 
+                and metadata analysis with seamless integration. Endorze ensures complete 
+                confidentiality of image data.</p>
+            <a href="/about" class="learn-more">Learn more</a>
+        </div>
+        <div class="image01">
+            <img src="{{ url_for('static', filename='index.jpg') }}" alt="img">
+        </div>
+    </div>
+    <div class="validate-banner">
+        <marquee scrollamount="20" scrolldelay="100"> &bull; Secure &bull; Endorze &bull; Authentic &bull; Reliable &bull; Validate</marquee>
+    </div>
+    <div class="how-to-validate">
+        <h1>How to Validate</h1>
+        <div class="image02">
+            <img src="{{ url_for('static', filename='validate.jpg') }}" alt="img">
+        </div>
+    </div>
+    <h1 class="upload">Upload an Image</h1>
+    <div class="upload-section">
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <div class="upload-box">
+                <img id="upload-placeholder" src="{{ url_for('static', filename='upload_image.jpg') }}" alt="Upload Placeholder" class="upload-placeholder">
+            </div>
+            <div class="button-group">
+                <label for="file-input" class="upload-btn">Upload</label>
+                <input type="file" name="file" id="file-input" style="display: none;" accept="image/*,image/tiff" onchange="previewImage(event)">
+                <input type="submit" value="Submit" class="submit-btn">
+            </div>
+        </form>
+        {% if prediction %}
+        <div class="prediction-result">
+            <h2>Prediction Result:</h2>
+            <p>Class: {{ prediction.class }}</p>
+            <p>Confidence: {{ prediction.confidence }}%</p>
+        </div>
+        {% endif %}
+    </div>
+    <script src="https://cdn.rawgit.com/seikichi/tiff.js/gh-pages/tiff.min.js"></script>
+    <script>
+        function previewImage(event) {
+            const file = event.target.files[0];
+            const output = document.getElementById('upload-placeholder');
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                if (file.type === 'image/tiff' || file.type === 'image/tif') {
+                    const tiff = new Tiff({ buffer: e.target.result });
+                    const canvas = tiff.toCanvas();
+                    output.src = canvas.toDataURL();
+                } else {
+                    output.src = e.target.result;
+                }
+            };
+
+            if (file.type === 'image/tiff' || file.type === 'image/tif') {
+                reader.readAsArrayBuffer(file);
+            } else {
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+</body>
+</html>
